@@ -1,0 +1,69 @@
+\documentclass{article}
+
+% Preamble
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Random Signals}
+\date{}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section{What is a Random Variable?}
+	
+	\section{What is a Random Signal?}
+	A random signal is a sequence of random variables; i.e. each term in the sequence may take on a range of values with associated probabilities described by the random variable corresponding to that term in the sequence.
+	
+	A random signal is stationary in the strict sense if all of its statistical properties are constant over time. This means two things. First, the random variables making up the sequence are identical over all time, with each term in the sequence being governed by the same probability distribution function. Second, the joint probability distribution for any set of random variables in the sequence is constant regardless of time shifts. In other words, the dependency of the variables does not change over time.
+	
+	A random signal is stationary in the wide sense if its first and second-order statistical properties (mean and autocorrelation) are constant over time. For wide-sense stationarity, the probability distribution functions of the random variables may not be constant, but they are restricted.
+	
+	\section{Properties of Random Variables and Random Signals}
+	The \textbf{expected value} is a key tool for calculating statistical properties of random variables and signals. To calculate the expected value of some function $f$ of one or more continuous random variables, we integrate $f$ weighted by the joint probability density function over the domain of the variables. The formula for the expected value of an arbitrary function of random variables is shown below.
+	
+	\begin{equation}
+		E\{f(x_n, x_m, \dots)\} = \int_{-\infty}^{\infty} \dots \int_{-\infty}^{\infty} f(x_n, x_m, \dots) p(x_n, x_m, \dots) \, dx_n \, dx_m \dots
+	\end{equation}
+	
+	The \textbf{mean} $\mu$ of a random variable is its expected value.
+	
+	\begin{equation}
+		\mu_{xn} = E\{x_n\} = \int_{-\infty}^{\infty}x_n p(x_n) dx_n
+	\end{equation}
+	
+	The \textbf{variance} ${\sigma}^2$ of a random variable is the expected value of the squared difference from the mean.
+	
+	\begin{equation}
+		{\sigma_{x}}^2 = E\{(x - \mu_x)^2\} = \int_{-\infty}^{\infty} (x - \mu_x)^2 p(x) dx
+	\end{equation}
+	
+	The \textbf{correlation function} of two random signals describes the expected value of the products of the signals offset by a shift.
+	
+	\begin{equation}
+		\phi_{xy} [m] = E\{x[n]y[n + m]\} = \int_{-\infty}^{\infty} x[n]y[n+m] p(x,y) dx dy
+	\end{equation}
+	
+	\begin{equation}
+		\phi_{xy}[n_1, n_2] = E{x[n_1]y[n_2]} = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} x_1 y_2 p(x_1, y_2; n_1, n_2) , dx_1 , dy_2
+	\end{equation}
+	
+	\section{What is a Periodogram?}
+	A periodogram is an estimate of the power spectral density of a signal. It is defined as the normalized squared magnitude of the discrete Fourier transform of a sequence of N samples, as shown below.
+	
+	\begin{equation}
+		I(\omega) = \frac{1}{N} \left| \sum_{n=0}^{N-1} x[n] e^{-j \omega n} \right| ^2
+	\end{equation}
+	
+	\section{What is Adaptive Filtering?}
+	$\delta[n] = $desired signal (known by system)
+	
+	$x[n] = $ corrupted signal (measured by microphone)
+	
+	$e[n] = $ error signal (difference between $\delta[n]$ and y[n])
+	
+	We use a feedback loop with e[n] times scale factor $\mu$ to adjust h[n] to reduce e[n]
+
+\end{document}

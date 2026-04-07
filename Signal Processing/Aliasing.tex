@@ -1,0 +1,46 @@
+\documentclass{article}
+
+% --- Preamble: Loading essential math packages ---
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}   % Standard math tools
+\usepackage{amssymb}   % More math symbols (like \mathbb{R} for real numbers)
+\usepackage{amsthm}    % For theorem environments
+
+\title{Sampling}
+\date{}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section{What Is Aliasing?}
+	Suppose we are analyzing a continuous-time signal containing the frequency component $e^{i\omega_0 t}$. If we sample this signal at a fixed detector every $T$ seconds, we will see the component as a sequence $e^{i\omega_0 T n}$. Could there exist a frequency component which would generate the same sample sequence if sampled with interval $T$?
+	
+	We will assume that such a frequency component does exist, with frequency $\omega_1$. Then
+	\[
+	e^{i\omega_1 T n} = e^{i\omega_0 T n}
+	\]
+	\[
+	\omega_1 T = \omega_0 T + 2\pi m
+	\]
+	\[
+	\omega_1 = \omega_0 + \frac{2\pi m}{T}
+	\]
+	\begin{equation} \label{eq:aliases}
+	f_1 = f_0 + f_s m, \quad m \in \mathbb{Z}
+	\end{equation}
+	
+	Thus, any component with frequency $f_1$ satisfying \eqref{eq:aliases} will generate the same sample sequence as the original component with frequency $f_0$.
+	
+	As demonstrated above, sampling gives an ambiguous view of the frequency content of a continuous-time signal: each sampled sequence could have arisen from any of the infinite frequencies satisfying \eqref{eq:aliases}. This loss of information about the true frequency content of a sampled signal is called aliasing because components masquerade as signals at frequencies other than the true frequency which created them.
+	
+	\section{How Can Aliasing Be Avoided?}
+	When sampling, we are interested in knowing the true frequency content of a signal. Without constraints on the spectrum of the signal, we would have to use an infinite sampling frequency as shown in \eqref{eq:aliases} to completely prevent aliasing. This is obviously not practical.
+	
+	We can prevent aliasing if we constrain the spectrum of the signal being sampled. If the signal contains a limited band of frequencies, then the number of possible aliases for each frequency component of the sampled sequence can be reduced to one by choosing a sufficiently large sampling frequency.
+	
+	It is most common to limit the spectrum of a signal using a lowpass filter. If we know that the highest frequency component in a signal occurs at cutoff frequency $f_c$, then, by \eqref{eq:aliases}, there will only be one possible alias for the frequency if $f_s > 2 f_s$.
+	
+	This is the essence of the Nyquist-Shannon Sampling Theorem, which states that a band-limited signal with a maximum frequency component $f_c$ can be sampled without aliasing if the sampling frequency $f_s$ is chosen so that $f_s > 2 f_c$.
+	
+\end{document}
