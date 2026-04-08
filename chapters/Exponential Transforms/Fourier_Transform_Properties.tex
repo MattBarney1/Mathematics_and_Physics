@@ -1,0 +1,36 @@
+\chapter{Fourier Transform Properties}
+
+\section{Symmetry}
+
+To appreciate the symmetric properties of the Fourier transform, we must understand the decomposition of functions into even and odd components. A real function $f(t)$ has a unique decomposition into even and odd functions $f_e$ and $f_o$, where
+
+\begin{equation}
+	f_e(t) = \frac{f(t) + f(-t)}{2}
+\end{equation}
+
+and
+
+\begin{equation}
+	f_o(t) = \frac{f(t) - f(-t)}{2}
+\end{equation}
+
+\subsection{Real Functions}
+
+If a function $f(t)$ is real-valued, its Fourier transform $F(\omega)$ is Hermitian, or conjugate symmetric. The converse is also true.
+
+\begin{equation}
+	F(-\omega) = F^*(\omega)
+\end{equation}
+
+The Fourier transform decomposes $f(t)$ into a spectrum of complex exponentials $e^{j\omega t}$. Recall that $e^{j\omega t} = cos(\omega t) + jsin(\omega t)$. For the integral sum of these exponentials to result in a real function $f(t)$, the real part of $F(\omega)$ must be symmetric about $\omega = 0$ and the imaginary part of $F(\omega)$ must be antisymmetric about $\omega = 0$.
+
+\subsection{Imaginary Functions}
+
+If a function $f(t)$ is imaginary-valued, its Fourier transform $F(\omega)$ is anti-Hermitian, or conjugate antisymmetric. The converse is also true.
+
+\begin{equation}
+	F(-\omega) = -F^*(\omega)
+\end{equation}
+
+
+

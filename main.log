@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.21)  7 APR 2026 13:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.21)  8 APR 2026 12:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -174,33 +174,69 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 (C:\Users\mbarn\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
-)) (main.toc)
+)) (main.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
+
+(C:\Users\mbarn\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
+
+(C:\Users\mbarn\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+))
 \tf@toc=\write3
 \openout3 = `main.toc'.
 
- [1
+
+(chapters/Exponential Transforms/Fourier_Analysis.tex [1
 
 
-{C:/Users/mbarn/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (main.aux)
+{C:/Users/mbarn/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2
+
+]
+Chapter 1.
+) (chapters/Exponential Transforms/Fourier_Transform_Properties.tex [3]
+[4
+
+]
+Chapter 2.
+
+Overfull \hbox (9.73682pt too wide) in paragraph at lines 29--30
+\OT1/cmr/m/n/10 If a func-tion $\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/i
+t/10 t\OT1/cmr/m/n/10 )$ is imaginary-valued, its Fourier trans-form $\OML/cmm/
+m/it/10 F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 !\OT1/cmr/m/n/10 )$ is anti-Hermitia
+n,
+ []
+
+[5]) [6] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 2507 strings out of 467871
- 36191 string characters out of 5418375
- 434736 words of memory out of 5000000
- 31406 multiletter control sequences out of 15000+600000
- 628327 words of font info for 42 fonts, out of 8000000 for 9000
+ 2571 strings out of 467871
+ 38157 string characters out of 5418375
+ 439736 words of memory out of 5000000
+ 31446 multiletter control sequences out of 15000+600000
+ 632503 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,5n,65p,202b,148s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,6n,65p,502b,174s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/mbarn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmbx12.pfb><C:/Users/mbarn/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmr10.pfb>
-Output written on main.pdf (1 page, 18750 bytes).
+cmbx10.pfb><C:/Users/mbarn/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmbx12.pfb><C:/Users/mbarn/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmex10.pfb><C:/Users/mbarn/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/mbarn/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/mbarn/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/mbarn/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/mbarn/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Use
+rs/mbarn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb
+>
+Output written on main.pdf (6 pages, 115289 bytes).
 PDF statistics:
- 16 PDF objects out of 1000 (max. 8388607)
+ 66 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
