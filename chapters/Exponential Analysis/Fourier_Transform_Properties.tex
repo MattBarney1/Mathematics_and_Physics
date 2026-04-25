@@ -1,0 +1,203 @@
+\chapter{Fourier Transform Properties}
+
+\section{Symmetry}
+
+\subsection{Even and Odd Functions}
+
+To appreciate the Symmetry Property of the Fourier transform, we must understand the decomposition of functions into even and odd components. Any function $f(t)$ has a unique decomposition into even and odd functions $f_e$ and $f_o$, where
+
+\begin{equation}
+	f_e(t) = \frac{f(t) + f(-t)}{2}
+\end{equation}
+
+and
+
+\begin{equation}
+	f_o(t) = \frac{f(t) - f(-t)}{2}
+\end{equation}
+
+\subsection{The Symmetry Property}
+
+We can decompose real and imaginary parts of a complex function into even and odd sections to give four components (denoted below as RE, RO, IE, and IO). The Symmetry Property of the Fourier transform states that there is a one-to-one mapping between the four components of a complex time function and the four components of its complex frequency transform. That mapping is shown below.
+
+\vspace{0.5cm}
+
+\begin{tikzpicture}[yscale=1.5, xscale=1.8]
+	% --- Row 1: Time Domain ---
+	\node at (-1.5, 1) {\textbf{Time domain}};
+	\node (f)   at (0, 1) {$f$};
+	\node (eq1) at (0.5, 1) {$=$};
+	\node (fRE) at (1, 1) {$f_{\text{RE}}$};
+	\node (p1)  at (1.4, 1) {$+$};
+	\node (fRO) at (1.8, 1) {$f_{\text{RO}}$};
+	\node (p2)  at (2.2, 1) {$+$};
+	\node (ifIE) at (2.6, 1) {$i\,f_{\text{IE}}$};
+	\node (p3)  at (3, 1) {$+$};
+	\node (ifIO) at (3.4, 1) {$i\,f_{\text{IO}}$};
+	
+	% --- Row 2: Arrows ---
+	% Custom double arrow with F symbol
+	\newcommand{\farrow}[1]{
+		\draw[<->, >=Latex] (#1, 0.8) -- (#1, 0.2) 
+		node[midway, right, xshift=2pt] {$\mathcal{F}$};
+	}
+	
+	\farrow{0} \farrow{1} \farrow{1.8} \farrow{2.6} \farrow{3.4}
+	
+	% --- Row 3: Frequency Domain ---
+	\node at (-1.5, 0) {\textbf{Frequency domain}};
+	\node (hf)   at (0, 0) {$F$};
+	\node (eq2)  at (0.5, 0) {$=$};
+	\node (hfRE) at (1, 0) {$F_{\text{RE}}$};
+	\node (p4)   at (1.4, 0) {$+$};
+	\node (ifIOh) at (1.8, 0) {$i\,F_{\text{IO}}$};
+	\node (p5)   at (2.2, 0) {$+$};
+	\node (ifIEh) at (2.6, 0) {$i\,F_{\text{IE}}$};
+	\node (p6)   at (3, 0) {$+$};
+	\node (hfRO) at (3.4, 0) {$F_{\text{RO}}$};
+	
+\end{tikzpicture}
+
+\vspace{0.5cm}
+
+From the Symmetry Property, numerous relationships are apparent. Just a few are summarized below.
+
+\subsection{Real Functions}
+
+If $f(t)$ is real, then its Fourier transform will have an even real component and an odd imaginary component. This type of function is called Hermitian or conjugate symmetric and satisfies the condition below.
+
+\begin{equation}
+	F(-\omega) = F^*(\omega)
+\end{equation}
+
+Conversely, if the Fourier transform of $f(t)$ is conjugate symmetric, then $f(t)$ is real.
+
+\subsection{Imaginary Functions}
+
+If $f(t)$ is imaginary, then its Fourier transform will have an odd real component and an even imaginary component. This type of function is called anti-Hermitian or conjugate anti-symmetric and satisfies the condition below.
+
+\begin{equation}
+	F(-\omega) = -F^*(\omega)
+\end{equation}
+
+Conversely, if the Fourier transform of $f(t)$ is conjugate anti-symmetric, then $f(t)$ is imaginary.
+
+\subsection{Conjugate Symmetric Functions}
+If $f(t)$ is conjugate symmetric (i.e. $f(t) = f_{RE}(t) + f_{IO}(t)$), then its Fourier transform will be real. Conversely, if the Fourier transform of $f(t)$ is real then $f(t)$ is conjugate symmetric.
+
+\subsection{Conjugate Anti-Symmetric Functions}
+If $f(t)$ is conjugate anti-symmetric (i.e. $f(t) = f_{RO}(t) + f_{IE}(t)$), then its Fourier transform will be imaginary. Conversely, if the Fourier transform of $f(t)$ is imaginary then $f(t)$ is conjugate anti-symmetric.
+
+\section{Hilbert Transform Relations}
+
+\subsection{Introduction}
+In system theory, Hilbert Transform Relations are a set of unique relationships between the real and imaginary parts of a complex function resulting from various constraints.
+
+\subsection{Causal Real Functions}
+\textbf{Derivation}: Let $f$ be a causal, stable, real function with Fourier transform $F(\omega)$. Let $f_e$ and $f_o$ be the even and odd components of $f$ respectively. We seek to express $f$ in terms of $f_e$:
+
+\begin{gather*}
+	f_e(t) = \frac{f(t) + f(-t)}{2} \\
+	2f_e(t) = f(t) + f(-t) \\
+	2f_e(t)u(t) = u(t)(f(t) + f(-t))
+\end{gather*}
+
+Because $f$ is causal, $f(t)$ is zero for all $t < 0$ and $f(-t)$ is zero for all $t > 0$. It follows that $f(t)u(t) = f(t)$ and $f(-t)u(t) = f(0)\delta(t)$. Then
+
+\begin{equation*}
+	2f_e(t)u(t) = f(t) + \delta(t)f(0)
+\end{equation*}
+
+Since $f(0) = f_e(0)$, we can express $f$ entirely in terms of $f_e$.
+
+\begin{equation} \label{eq:causal_function_in_terms_of_even_component}
+	f(t) = 2u(t)f_e(t) - \delta(t)f_e(0)
+\end{equation}
+
+Recall that by the Symmetry Property, the Fourier transform of $f_e$ is real and that of $f_o$ is imaginary. It follows that $F$ can be determined from its real component $F_R$.
+
+\textbf{Summary}: The Fourier transform of a causal, stable, real function can be uniquely determined from its real component by the following process:
+
+\begin{enumerate}
+	\item Use the inverse Fourier transform to find $f_e$ from $F_R$.
+	\item Recover $f$ from $f_e$ using \eqref{eq:causal_function_in_terms_of_even_component}.
+	\item Use the Fourier transform to find $F$ from $f$.
+\end{enumerate}
+
+It follows, of course, that $F_I$ can be determined from $F_R$.
+
+
+
+\subsection{Finite Causal Real Discrete-Time Functions}
+Let $f$ be a causal, finite, real, discrete-time function with DFT $F[k]$. 
+
+\textbf{Summary}: The discrete Fourier transform of a causal, finite, real function can be determined uniquely from its real component by the following process:
+
+\begin{enumerate}
+	\item Compute the inverse DFT of $F_R[k]$ to obtain the sequence
+	\begin{equation*}
+		f_{ep}[n] = \frac{f[n] + f[((-n))_N]}{2}, 0 \leq n \leq N - 1.
+	\end{equation*}
+	
+	\item Compute the periodic odd part of $f[n]$ as
+	\begin{equation*}
+		f_{op}[n] = \begin{cases}
+			f_{ep}[n], & 0 < n < \frac{N}{2}, \\
+			-f_{ep}[n], & \frac{N}{2} < n \leq N - 1, \\
+			0, & otherwise.
+		\end{cases}
+	\end{equation*}
+	
+	\item Compute the DFT of $f_{op}$ to obtain $jF_I[k]$.
+\end{enumerate}
+
+\subsection{Complex Sequences}
+Let $x$ be a complex sequence with a Fourier transform $X$ such that
+
+\begin{equation*}
+	X(e^{j\omega}) = 0, -\pi \leq \omega < 0.
+\end{equation*}
+
+Let $x_r$ and $x_i$ be the real and imaginary components of $x$ respectively such that $x[n] = x_r[n] + ix_i[n]$. Let $X_r$ and $X_i$ be the Fourier transforms of $x_r$ and $x_i$ respectively such that $X(e^{j\omega}) = X_r(e^{j\omega}) + X_i(e^{j\omega})$ (note that $X_r$ and $X_i$ are \textit{not} the real and imaginary components of $X$). Then
+
+\begin{equation}
+	X(e^{j\omega}) = \begin{cases}
+		2X_r(e^{j\omega}), 0 < \omega < \pi \\
+		0, -\pi \leq \omega < 0,
+	\end{cases}
+\end{equation}
+
+and
+
+\begin{equation}
+	X(e^{j\omega}) = \begin{cases}
+		2jX_i(e^{j\omega}), 0 < \omega < \pi \\
+		0, -\pi \leq \omega < 0.
+	\end{cases}
+\end{equation}
+
+Note that $X$ cannot be recovered from either $X_r$ or $X_i$ alone at $\omega = 0$.
+
+Additionally,
+
+\begin{equation}
+	X_i(e^{j\omega}) = H(e^{j\omega})X_r(e^{j\omega}),
+\end{equation}
+
+and
+
+\begin{equation}
+	X_r(e^{j\omega}) = -H(e^{j\omega})X_i(e^{j\omega}),
+\end{equation}
+
+where
+
+\begin{equation}
+	H(e^{j\omega}) = \begin{cases}
+		-j, 0 < \omega < \pi, \\
+		j, \pi < \omega < 0.
+	\end{cases}
+\end{equation}
+
+A system with frequency response $H$ is called an ideal 90-degree phase shifter, or a Hilbert Transformer.
+

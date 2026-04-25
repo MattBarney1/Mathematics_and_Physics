@@ -1,15 +1,28 @@
 \documentclass{book}
 
-\usepackage{amsmath, amssymb, graphicx}
+\usepackage{amsmath, amssymb, graphicx, tikz, amsthm}
+
+\usetikzlibrary{arrows.meta}
+
+\theoremstyle{definition}
+\newtheorem{exmp}{Example}[chapter]
 
 \begin{document}
 	
 	\tableofcontents
+	\part{Exponential Analysis}
 	
-%	\input{chapters/signals}
-%	\input{chapters/fourier}
-%	\input{chapters/sampling}
-\input{chapters/Exponential Transforms/Fourier_Analysis}
-\input{chapters/Exponential Transforms/Fourier_Transform_Properties}
+		\input{chapters/Exponential Analysis/introduction}
+		\input{chapters/Exponential Analysis/Fourier_series}
+		\input{chapters/Exponential Analysis/dtft}
+		\input{chapters/Exponential Analysis/dft}
+		\input{chapters/Exponential Analysis/Fourier_Transform_Properties}
+		
+	\part{Linear Time-Invariant Systems}
+		
+		\input{chapters/Linear Time-Invariant Systems}
+		
+	\part{Random Processes}
+		\input{chapters/random_processes/random_signals}
 	
 \end{document}

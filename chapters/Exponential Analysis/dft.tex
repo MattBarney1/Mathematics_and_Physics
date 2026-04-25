@@ -1,0 +1,18 @@
+\chapter{Discrete Fourier Transform}
+
+\section{Summary}
+Below are the analysis and synthesis equations for the discrete Fourier transform.
+
+\begin{equation}
+	\textbf{Analysis}: X[k] = \sum_{n = 0}^{N - 1} x[n]W_N^{kn}, 0 \leq k \leq N - 1,
+\end{equation}
+
+\begin{equation}
+	\textbf{Synthesis}: x[n] = \frac{1}{N} \sum_{k = 0}^{N - 1} X[k]W_N^{-kn}, 0 \leq n \leq N - 1.
+\end{equation}
+
+\begin{equation}
+	W_N = e ^ {-j \frac{2 \pi}{N}}
+\end{equation}
+
+

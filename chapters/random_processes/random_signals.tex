@@ -1,0 +1,234 @@
+\chapter{Random Processes}
+
+\section{Introduction}
+
+\section{Random Variables}
+In statistics, a \textbf{random variable} is a variable whose different values represent all possible outcomes of a random phenomenon. Impossible outcomes are not included in the variable's domain. Random variables may be discrete or continuous depending on whether the possible outcomes form a discrete or continuous set.
+
+\vspace{0.5cm}
+
+A \textbf{probability distribution function} (PDF) describes the probability associated with each value of a random variable (i.e. the probability associated with each possible outcome of the random phenomenon described by the variable). The exact meaning and use of the PDF differs for continuous and discrete random variables.
+
+\vspace{0.5cm}
+
+For continuous random variables, the PDF is called a \textbf{probability density function} and represents the probability density associated with each value of the random variable. For discrete random variables, the PDF is called a \textbf{probability mass function} and represents the probability mass associated with each value of the random variable.
+
+\textbf{Cumulative probability} is the probability that the value of the random variable will fall within a given set of values. For continuous random variables, the cumulative probability is the integral of the PDF over the given set. For discrete random variables, the cumulative probability is the sum of the PDF over the given set. The cumulative probability over the entire domain of the random variable is always equal to 1.
+
+\begin{exmp}
+	Suppose $X_n$ is a random variable with a probability distribution given by
+	\begin{equation*}
+		p_{X_n}(x_n,n) = \begin{cases}
+			\frac{2}{3}x_n, \hspace{0.5cm} 1 < x_n < 2 \\
+			0, \hspace{0.5cm} otherwise
+			\end{cases}
+	\end{equation*}
+	
+	Find the probability $P[X_n < 1.5]$.
+	
+	\vspace{0.5cm}
+	
+	\textbf{Solution}:
+	\begin{equation*}
+		P[X_n < 1.5] = \int_{1}^{1.5}\frac{2}{3}x_ndx_n = \frac{1}{3}\left[ x_n^2 \right]_1^{1.5} = \frac{1}{3}((1.5)^2 - 1) = \left(\frac{1}{3} \right) \left(\frac{5}{4} \right) = \frac{5}{12	}
+	\end{equation*}
+\end{exmp}
+
+\vspace{0.5cm}
+
+\begin{exmp}
+	Suppose that $X_n$ and $X_m$ are two independent random variables with uniform probability distributions on the space given by $ 0 < X_n < 1$ and $0 < X_m < 2$. Find $P[X_n - X_m < 1]$.
+	
+	\vspace{0.5cm}
+	
+	\textbf{Solution}:
+	
+	$P[X_n - X_m < 1]$ is equal to the integral of the joint probability distribution of $X_n$ and $X_m$ over the set of values $(x_n, x_m)$ satisfying $0 < x_n < 1$, $0 < x_m < 2$, and $x_n < 1 + x_m$. Note that given the first two inequalities, the third inequality is always true. Hence, we will integrate the joint PDF over the entire domain of $X_n$ and $X_m$.
+	
+	\begin{equation*}
+		P[X_n - X_m < 1] = \int_0^2 \int_0^1 p_{X_nX_m}(x_n, n, x_m, m)dx_mdx_n = 1.
+	\end{equation*}
+\end{exmp}
+
+\vspace {0.5cm}
+
+\textbf{Expected value} is the theoretical average value of a function of a random variable over infinitely many trials of the associated random process. For continuous random variables, expected value is the integral of the function weighted by the PDF over all possible values of the random variable. For discrete random variables, expected value is the sum of the function weighted by the PDF over all possible values of the random variable. Note that expected value is a linear operator.
+
+The \textbf{mean} of a random variable is equal to the expected value of the variable itself.
+
+\begin{equation}
+	m_{X_c} = \mathcal{E}(X_{continuous}) = \int_{-\infty}^{\infty} x_c p_{X_c}(x_c)dx_c
+\end{equation}
+
+\begin{equation}
+	m_{X_d} = \mathcal{E}(X_{discrete}) = \sum_{k = -\infty}^{\infty} x_d p_{X_d}(x_d)dx_d
+\end{equation}
+
+The \textbf{variance} of a random variable is equal to the expected value of the squared difference of the variable and its mean.
+
+\begin{equation}
+	\sigma_{X_c}^2 = \mathcal{E}((X_{continuous} - m_{X_c})^2) = \int_{-\infty}^{\infty} ((X_c - m_{X_c})^2) p_{X_c}(x_c)dx_c
+\end{equation}
+
+\begin{equation}
+	\sigma_{X_d}^2 = \mathcal{E}((X_{discrete} - m_{X_d})^2) = \sum_{k = -\infty}^{\infty} ((X_d - m_{X_d})^2) p_{X_d}(x_d)dx_d
+\end{equation}
+
+There are several types of independence between random variables. Two random variables are \textbf{statistically independent} if knowledge about the value of one does not given any knowledge about the value of the other. This means that the PDF of each random variable must be constant with respect to changes in the other variable's value. This condition is encapsulated in the following equation, which states that the joint probability distribution of the variables is equal to the product of the individual PDFs.
+
+\begin{equation}
+	p_{XY}(x,y) = p_X(x)p_Y(y)
+\end{equation}
+
+ Two random variables are \textbf{uncorrelated} (linearly independent) if knowledge about the value of one cannot be used to linearly predict the value of the other. Some non-linear relationship may exist between the variables. Hence, lack of correlation is weaker than statistical independence. The condition for lack of correlation is defined mathematically as follows:
+ 
+ \begin{equation}
+ 	\mathcal{E}(f(X)g(Y)) = \mathcal{E}(f(X)) \mathcal{E}(g(Y)).
+ \end{equation}
+
+One useful result of this fact is that the mean of the product of two statistically independent random variables is the product of their means.
+
+\begin{equation}
+	m_{XY} = m_Xm_Y
+\end{equation}
+
+\section{Random Signals}
+
+A \textbf{random signal} is a signal for which each individual sample $x[n]$ is the outcome of a random phenomenon described by a random variable $x_n$. The entire signal is determined by a collection of such random variables, one for each sample time, $-\infty < n < \infty$. This collection of random variables is referred to as a \textbf{random process}. To completely describe a random process, we must specify the individual and joint probability distributions of each random variable.
+
+\vspace{0.5cm}
+
+The \textbf{autocorrelation} of a random signal measures how the signal correlates with a time-shifted version of itself. It is a function of index and time shift, calculated as the expected value of the signal at the index multiplied by the complex conjugate of the signal at a shifted index.
+
+\begin{equation}
+	\phi_{XX}[n, m] = \mathcal{E}(X[n]X^*[n + m])
+\end{equation}
+
+The Fourier transform $\Phi_{XX}(e^{j\omega})$ of the autocorrelation function is equal to the \textbf{power spectral density} of the signal.
+
+\vspace{0.5cm}
+
+A random signal is \textbf{wide-sense stationary} if its mean is time-independent and \underline{}its autocorrelation function depends only on the time-shift (not the absolute time itself).
+
+\vspace{0.5cm}
+
+Consider a stable LTI system with real impulse response $h[n]$. Let $x[n]$ be a real-valued sequence that is a sample sequence of a wide-sense stationary discrete-time process. Define $y[n]$ as the output of the system for input $x$. Then
+
+\begin{equation*}
+	y[n] = \sum_{k = -\infty} ^ \infty h[n - k]x[k]
+\end{equation*}
+
+Let $m_x$ and $m_y$ be the means of x and y respectively. Then
+
+\begin{equation}
+	m_y = m_x \sum_{k = -\infty} ^ \infty h[k],
+\end{equation}
+
+or
+
+\begin{equation}
+	m_y = H(e^{j0})m_x.
+\end{equation}
+
+Let $\phi_{XX}$ and $\phi_{YY}$ be the autocorrelation functions for $X$ and $X$ respectively. Then
+
+\begin{equation}
+	\phi_{YY}[m] = \phi_{XX}[m] \ast c_{hh}[m],
+\end{equation}
+
+where
+
+\begin{equation}
+	c_{hh}[m] = \sum_{k = -\infty} ^ {\infty} h[k] h[m + k] = h[m] \ast h[-m]
+\end{equation}
+
+is known as the deterministic autocorrelation function of $h[n]$.
+
+\vspace{0.5cm}
+
+Alternatively,
+
+\begin{equation}
+	\Phi_{yy}(e^{j\omega}) = C_{hh}(e^{j\omega})\Phi_{xx}(e^{j\omega}),
+\end{equation}
+
+where
+
+\begin{equation}
+	C_{hh}(e^{j\omega}) = \|H(e^{j\omega})\|^2.
+\end{equation}
+
+\begin{exmp}
+	Let $x[n]$ be a sequence given by identical, independent random variables each with a uniform probability distribution from 0 to 1. Suppose $y[n] = x[n] - x[n-1]$. \\
+	(a) Find $\mathcal{E}(y[n])$. \\
+	(b) Suppose that $\phi_{yy}[m] = \mathcal{E}(y[n+m]y^*[n])$. Find $\phi_{yy}[m]$.
+	
+	\vspace{0.5cm}
+	
+	\textbf{Solution}:
+	
+	(a)
+	\begin{align*}
+		\mathcal{E}(y[n]) &= \mathcal{E}(x[n] - x[n - 1]) \\
+		&= \mathcal{E}(x[n]) - \mathcal{E}(x[n - 1]) \\
+		&= 0.5 - 0.5 = 0.
+	\end{align*}
+	
+	(b) We will seek the solution to (b) by several methods.
+	
+	\begin{align*}
+		\phi_{yy}[m] &= \mathcal{E}(y[n+m]y^*[n]) \\
+		&= \mathcal{E}((x[n] - x[n-1])(x[n + m] - x[n + m - 1])) \\
+		&= \mathcal{E}(x[n]x[n+m] - x[n]x[n + m - 1] - x[n - 1]x[n + m] + x[n-1]x[n+m-1]) \\
+		&= \mathcal{E}(x[n]x[n+m]) - \mathcal{E}(x[n]x[n+m-1]) - \mathcal{E}(x[n-1]x[n+m]) + \mathcal{E}(x[n-1]x[n+m-1]).
+	\end{align*}
+	
+	The value of $\phi_{yy}[m]$ varies depending on $m$.
+	\begin{enumerate}
+		\item If $m = -1$, then 
+		\begin{align*}
+			\phi_{yy}[m] &= \mathcal{E}(x[n])\mathcal{E}(x[n-1]) - \mathcal{E}(x[n])\mathcal{E}(x[n-2]) - \mathcal{E}(x^2[n-1]) + \mathcal{E}(x[n-1])\mathcal{E}(x[n-2]) \\
+			&= \frac{1}{4} - \frac{1}{4} - \frac{1}{3} + \frac{1}{4} = -\frac{1}{12}.
+		\end{align*}
+		\item If $m = 0$, then
+		\begin{align*}
+			\phi_{yy}[0] = \mathcal{E}(x^2[n]) - 2\mathcal{E}(x[n])\mathcal{E}(x[n-1]) + \mathcal{E}(x^2[n-1]) = \frac{2}{3} - \frac{1}{2} = \frac{1}{6}.
+		\end{align*}
+		\item If $m = 1$, then
+		\begin{align*}
+			\phi_{yy}[0] &= \mathcal{E}(x[n])\mathcal{E}(x[n+1]) - \mathcal{E}(x^2[n]) - \mathcal{E}(x[n-1])\mathcal{E}(x[n+1]) + \mathcal{E}(x[n-1])\mathcal{E}(x[n]) \\
+			&= \frac{1}{4} - \frac{1}{3} - \frac{1}{4} + \frac{1}{4} = -\frac{1}{12}
+		\end{align*}
+		\item Otherwise,
+		\begin{align*}
+			\phi_{yy}[m] &= \mathcal{E}(x[n])\mathcal{E}(x[n+m]) - \mathcal{E}(x[n])\mathcal{E}(x[n+m-1]) - \mathcal{E}(x[n-1])\mathcal{E}(x[n+m]) + \mathcal{E}(x[n-1])\mathcal{E}(x[n+m-1]) \\
+			&= \frac{1}{4} - \frac{1}{4} - \frac{1}{4} + \frac{1}{4} = 0.
+		\end{align*}
+	\end{enumerate}
+	
+	Alternatively, we can use the deterministic autocorrelation function $c_{hh}[h]$ of $h[n]$ to calculate $\phi_{yy}[m]$. Recall that $c_{hh}[m] = h[m] \ast h[-m]$. In this problem, $h[n] = \delta[n] - \delta[n - 1]$. Then $c_{hh}[m] = -\delta[m + 1] + 2\delta[m] - \delta[m - 1]$. First, we must find $\phi_{xx}[m]$.
+	
+	\begin{align*}
+		\phi_{xx}[m] &= \mathcal{E}(x[n]x[n+m]) \\
+		&= \begin{cases}
+			\frac{1}{3}, \hspace{0.5cm} m = 0, \\
+			\frac{1}{4}, \hspace{0.5cm} otherwise.
+		\end{cases}
+	\end{align*}
+	
+	Then
+	
+	\begin{align*}
+		\phi_{yy}[m] &= \phi_{xx}[m] \ast c_{hh}[m] = 
+		\begin{cases}
+			\frac{1}{6}, \hspace{0.5cm} m = 0, \\
+			-\frac{1}{12}, \hspace{0.5cm} m = \pm 1, \\
+			0, \hspace{0.5cm} otherwise.
+		\end{cases}
+	\end{align*}
+	
+\end{exmp}
+
+\begin{exmp}
+	Let $x[n]$ be a stationary random sequence with mean $m_x = 1$ and an autocorrelation function given by $\phi_{xx}[m] = 2\delta[m]$.
+\end{exmp}

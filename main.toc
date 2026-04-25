@@ -1,6 +1,31 @@
-\contentsline {chapter}{\numberline {1}Fourier Analysis}{3}{}%
-\contentsline {section}{\numberline {1.1}Introduction}{3}{}%
-\contentsline {chapter}{\numberline {2}Fourier Transform Properties}{5}{}%
-\contentsline {section}{\numberline {2.1}Symmetry}{5}{}%
-\contentsline {subsection}{\numberline {2.1.1}Real Functions}{5}{}%
-\contentsline {subsection}{\numberline {2.1.2}Imaginary Functions}{6}{}%
+\contentsline {part}{I\hspace {1em}Exponential Analysis}{3}{}%
+\contentsline {chapter}{\numberline {1}Introduction}{5}{}%
+\contentsline {section}{\numberline {1.1}Introduction}{5}{}%
+\contentsline {chapter}{\numberline {2}The Fourier Series}{7}{}%
+\contentsline {section}{\numberline {2.1}Fourier Series}{7}{}%
+\contentsline {chapter}{\numberline {3}Discrete-Time Fourier Transform}{9}{}%
+\contentsline {section}{\numberline {3.1}Introduction}{9}{}%
+\contentsline {section}{\numberline {3.2}Analysis and Synthesis}{9}{}%
+\contentsline {chapter}{\numberline {4}Discrete Fourier Transform}{11}{}%
+\contentsline {section}{\numberline {4.1}Summary}{11}{}%
+\contentsline {chapter}{\numberline {5}Fourier Transform Properties}{13}{}%
+\contentsline {section}{\numberline {5.1}Symmetry}{13}{}%
+\contentsline {subsection}{\numberline {5.1.1}Even and Odd Functions}{13}{}%
+\contentsline {subsection}{\numberline {5.1.2}The Symmetry Property}{13}{}%
+\contentsline {subsection}{\numberline {5.1.3}Real Functions}{14}{}%
+\contentsline {subsection}{\numberline {5.1.4}Imaginary Functions}{14}{}%
+\contentsline {subsection}{\numberline {5.1.5}Conjugate Symmetric Functions}{14}{}%
+\contentsline {subsection}{\numberline {5.1.6}Conjugate Anti-Symmetric Functions}{14}{}%
+\contentsline {section}{\numberline {5.2}Hilbert Transform Relations}{15}{}%
+\contentsline {subsection}{\numberline {5.2.1}Introduction}{15}{}%
+\contentsline {subsection}{\numberline {5.2.2}Causal Real Functions}{15}{}%
+\contentsline {subsection}{\numberline {5.2.3}Finite Causal Real Discrete-Time Functions}{15}{}%
+\contentsline {subsection}{\numberline {5.2.4}Complex Sequences}{16}{}%
+\contentsline {part}{II\hspace {1em}Linear Time-Invariant Systems}{17}{}%
+\contentsline {chapter}{\numberline {6}Linear Time-Invariant Systems}{19}{}%
+\contentsline {section}{\numberline {6.1}Introduction}{19}{}%
+\contentsline {part}{III\hspace {1em}Random Processes}{21}{}%
+\contentsline {chapter}{\numberline {7}Random Processes}{23}{}%
+\contentsline {section}{\numberline {7.1}Introduction}{23}{}%
+\contentsline {section}{\numberline {7.2}Random Variables}{23}{}%
+\contentsline {section}{\numberline {7.3}Random Signals}{25}{}%

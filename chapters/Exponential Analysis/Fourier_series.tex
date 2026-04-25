@@ -1,0 +1,36 @@
+\chapter{The Fourier Series}
+
+\section{Fourier Series}
+A Fourier Series is the decomposition of a periodic function into a sum of trigonometric functions, which can be expressed equivalently in terms of sines and cosines or in terms of complex exponentials.
+
+Below are the synthesis and analysis equations for a continuous-time function $x(t)$ with period $P$.
+
+\begin{equation}
+	x(t) = \sum_{k=-\infty}^{\infty} S[k] e^{j 2 \pi \frac{k}{P} t}
+\end{equation}
+
+\begin{equation}
+	S[k] = \frac{1}{P} \int_{0}^{P} x(t) e^{-j 2 \pi \frac{k}{P} t} dt
+\end{equation}
+
+Let us sample the continuous-time function $x(t)$ with a sampling period $T_s$. The result is a discrete-time function $x[n]$ such that $x[n] = x(nT)$. We can develop a Fourier series representation of $x[n]$ from the definition of the Fourier series of $x(t)$ shown above. Note that to guarantee the periodicity of $x[n]$ we must constrain the sampling period $T_s$ so that $P = NT_s$ for some integer $N$.	
+
+\begin{align*}
+	S[k] &= \frac{1}{NT_s} \sum_{k = 0}^{N - 1} x[n] e^{-j 2 \pi \frac{k}{P} n T_s} \\
+	&= \frac{1}{NT_s} \sum_{k = 0}^{N - 1} x[n] e^{-j 2 \pi \frac{k}{N} n}
+\end{align*}
+
+\begin{align*}
+	x[n] = x(nT_s) &= \sum_{k = -\infty}^{\infty} S[k] e^{j 2 \pi \frac{k}{P} n T_s} \\
+	&= \sum_{k = -\infty}^{\infty} S[k] e^{j 2 \pi \frac{k}{N} n}
+\end{align*}
+
+Below are the synthesis and analysis equations for a discrete-time function $x[n]$ with period $N$.
+
+\begin{equation}
+	x[n] = \sum_{k = 0}^{N - 1} c_k e^{j k \omega_0 n}
+\end{equation}
+
+\begin{equation}
+	c_k = \frac{1}{N} \sum_{n = 0}^{N - 1} x[n] e^{-j k \omega_0 n}
+\end{equation}
